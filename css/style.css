@@ -133,17 +133,17 @@ section {
   border-radius: 50%;
 }
 
-.planet-1 {
-  left: 4.4em;
-  margin-top: 0;
-  left: 100%;
-  animation: animPlanet-1 12s linear infinite;
-}
 .sun,
 .planet,
 .planet-1 {
   margin-left: -2em;
   margin-top: -2em;
+}
+
+.planet-1 {
+  left: 4.4em;
+  margin-top: 0;
+  animation: animPlanet-1 12s linear infinite;
 }
 
 .sun {
