@@ -125,7 +125,8 @@ section {
 .orbit,
 .orbit-1,
 .planet,
-.planet-1 {
+.planet-1,
+.lines-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -148,7 +149,7 @@ section {
 
 .sun {
   transform: rotateX(116deg);
-  margin-top: 15em;
+  margin-top: 42em;
 }
 
 .orbit {
@@ -169,7 +170,7 @@ section {
   animation: animPlanet 12s linear infinite;
 }
 .lines-wrapper {
-  display: none;
+  margin-top: 42em;
   transform: rotateX(116.6deg);
 }
 
@@ -311,14 +312,14 @@ section {
 .lines {
   position: absolute;
   right: -51.7em;
-  top: -34em;
+  top: -15.7em;
   width: 59.5em;
   transform: rotate(25deg);
 }
 .phone {
   position: absolute;
   right: -43.8em;
-  top: -30.6em;
+  top: -19.2em;
   width: 27.8em;
   transform: rotate(25deg);
 }
