@@ -70,46 +70,68 @@ section {
     transform: translate(0);
   }
 }
-/* @keyframes rotation-right {
+
+@keyframes arrow1 {
   0% {
-    transform: rotate(0deg);
-    width:41em;
-  } 
-  25% {
-    width: 30em;
+    transform: translateY(0) rotate(0);
   }
-  37% {
-    width: 47em;
+  30% {
+    transform: translateY(-1em) rotate(-10deg);
   }
-  50% {
-    width:41em;
+  60% {
+    transform: translateY(0) rotate(0);
   }
-  75% {
-    width: 30em;
+  90% {
+    transform: translateY(-1em) rotate(-10deg);
   }
-  87% {
-    width: 47em;
+}
+@keyframes arrow2 {
+  0% {
+    transform: translateY(0) rotate(0);
   }
-  100% {
-    transform: rotate(360deg);
-    width: 41em;
+  30% {
+    transform: translateY(1em) rotate(10deg);
   }
-} */
-/* @keyframes ellipse {
-  from {
-    transform: skewX(-40deg) rotate(0deg) translateY(-10em) 
-               rotate(0deg) skewX(40deg) rotate(0deg);
+  60% {
+    transform: translateY(0) rotate(0);
   }
-  to {
-    transform: skewX(-40deg) rotate(360deg) translateY(-10em) 
-               rotate(-360deg) skewX(40deg) rotate(360deg);
+  90% {
+    transform: translateY(1em) rotate(10deg);
   }
-} */
+}
+@keyframes arrow1-mob {
+  0% {
+    transform: translateY(0) rotate(0) scale(-1, 1);
+  }
+  30% {
+    transform: translateY(-1em) rotate(-10deg) scale(-1, 1);
+  }
+  60% {
+    transform: translateY(0) rotate(0) scale(-1, 1);
+  }
+  90% {
+    transform: translateY(-1em) rotate(-10deg) scale(-1, 1);
+  }
+}
+@keyframes arrow2-mob {
+  0% {
+    transform: translateY(0) rotate(0) scale(-1, 1);
+  }
+  30% {
+    transform: translateY(1em) rotate(10deg) scale(-1, 1);
+  }
+  60% {
+    transform: translateY(0) rotate(0) scale(-1, 1);
+  }
+  90% {
+    transform: translateY(1em) rotate(10deg) scale(-1, 1);
+  }
+}
 
 .animation-wrapper {
   position: absolute;
-  right: 44.8em;
-  top: 53.7em;
+  right: 43.5em;
+  top: 49.7em;
   transform: rotate(-25deg);
 }
 
@@ -121,7 +143,7 @@ section {
   transform: rotateX(-116.6deg);
 }
 
-.sun,
+.phone-wrapper,
 .orbit,
 .orbit-1,
 .planet,
@@ -134,7 +156,7 @@ section {
   border-radius: 50%;
 }
 
-.sun,
+.phone-wrapper,
 .planet,
 .planet-1 {
   margin-left: -2em;
@@ -144,36 +166,86 @@ section {
 .planet-1 {
   left: 4.4em;
   margin-top: 0;
-  animation: animPlanet-1 12s linear infinite;
 }
 
-.sun {
+.phone-wrapper {
   transform: rotateX(116deg);
   margin-top: 42em;
 }
-
+.flare {
+  position: absolute;
+  top: 11em;
+  right: -23em;
+  width: 24em;
+  transform: rotate(116deg);
+  animation: flare 3s ease-in-out alternate infinite;
+}
 .orbit {
   width: 51.6em;
   height: 51.6em;
-  animation: animOrbit 12s linear infinite;
 }
 .orbit-1 {
   left: -4.4em;
   top: -3.8em;
   width: 60.6em;
   height: 60.6em;
-  animation: animOrbit-1 12s linear infinite;
+}
+.orbit-1-anim {
+  animation: animOrbit 9s linear infinite;
+}
+.planet-1-anim {
+  animation: animPlanet 9s linear infinite;
+}
+.orbit-2-anim {
+  animation: animOrbit-1 9s linear infinite;
+}
+.planet-2-anim {
+  animation: animPlanet-1 9s linear infinite;
+}
+.orbit-3-anim {
+  animation: animOrbit 11s linear infinite;
+  animation-delay: 1s;
+}
+.planet-3-anim {
+  animation: animPlanet 11s linear infinite;
+  animation-delay: 1s;
+}
+.orbit-4-anim {
+  animation: animOrbit-1 7s linear infinite;
+  animation-delay: 0.5s;
+}
+.planet-4-anim {
+  animation: animPlanet-1 7s linear infinite;
+  animation-delay: 0.5s;
+}
+.orbit-5-anim {
+  animation: animOrbit 7s linear infinite;
+  animation-delay: 0.5s;
+}
+.planet-5-anim {
+  animation: animPlanet 7s linear infinite;
+  animation-delay: 0.5s;
+}
+.planet-5-anim > img {
+  transform: rotateX(244deg);
 }
 
 .planet {
   left: 100%;
-  animation: animPlanet 12s linear infinite;
 }
 .lines-wrapper {
   margin-top: 42em;
   transform: rotateX(116.6deg);
 }
 
+@keyframes flare {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
 @keyframes animOrbit {
   0% {
     transform: rotateZ(0deg);
@@ -208,47 +280,6 @@ section {
   }
 }
 
-/* .test {
-  transform: rotate(-29deg) scale(1.5);
-  position: absolute;
-  top: 33.4em;
-  right: 60.4em;
-  z-index: 30;
-}
-
-.deform {
-  width: 11.9em;
-  height: 13.5em;
-  -webkit-transform: scaleX(2.5);
-  top: 2.6em;
-  position: absolute;
-  left: 14.1em;
-  border-radius: 50%;
-}
-
-.rotate {
-  width: 100%;
-  height: 100%;
-  -webkit-animation: circle 10s infinite linear;
-  -webkit-transform-origin: 50% 50%;
-}
-
-.counterrotate {
-  width: 50px;
-  height: 50px;
-  -webkit-animation: ccircle 10s infinite linear;
-}
-
-.inner {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  display: block;
-  -webkit-transform: scaleX(0.33) rotate(29deg);
-} */
-
 @-webkit-keyframes circle {
   from {
     -webkit-transform: rotateZ(0deg);
@@ -278,7 +309,7 @@ section {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   z-index: 10;
-  margin-bottom: 9.1em;
+  margin-bottom: 7em;
 }
 .button:hover {
   color: #ffffff;
@@ -311,9 +342,9 @@ section {
 
 .lines {
   position: absolute;
-  right: -51.7em;
-  top: -15.7em;
-  width: 59.5em;
+  right: -51.1em;
+  top: -14em;
+  width: 53.9em;
   transform: rotate(25deg);
 }
 .phone {
@@ -324,9 +355,6 @@ section {
   transform: rotate(25deg);
 }
 .crystal1 {
-  /* position: absolute;
-  right: 40.7em;
-  top: 25.4em; */
   width: 4em;
 }
 .crystal-wrapper {
@@ -337,19 +365,18 @@ section {
   animation: ellipse 4s linear infinite;
 }
 .main-screen {
-  padding-top: 5.8em;
+  padding-top: 5em;
   position: relative;
-  margin-bottom: 3.6em;
 }
 .main-screen__title {
   font-weight: 900;
   font-size: 3.15em;
-  max-width: 10em;
+  max-width: 11em;
   line-height: 1.2em;
   color: #fff;
   margin-bottom: 0.7em;
   font-family: "Roboto", sans-serif;
-  letter-spacing: 3px;
+  letter-spacing: 0.1em;
 }
 .main-screen__text {
   font-weight: 700;
@@ -380,6 +407,9 @@ section {
   margin-bottom: 1.6em;
   display: flex;
 }
+.main-screen__rights:last-child {
+  margin-bottom: 3.2em;
+}
 .footer {
   padding: 1.5em 0;
   background-color: #43191a;
@@ -406,10 +436,7 @@ section {
   display: flex;
   align-items: center;
 }
-.footer__list-item > img {
-  margin-right: 1.9em;
-  width: 2.1em;
-}
+
 .footer__first-text {
   margin-right: 1.15em;
 }
@@ -424,18 +451,104 @@ section {
   max-width: 9em;
   font-size: 1.3em;
 }
+.footer__arrow-1 {
+  margin-right: 1.9em;
+  width: 2.1em;
+  animation: arrow1 3.2s ease-in-out alternate infinite;
+}
+.footer__arrow-2 {
+  margin-right: 1.9em;
+  width: 2.1em;
+  animation: arrow2 3.2s ease-in-out alternate infinite;
+}
 
-/* @media (max-width: 1200px) {
-  .button {
-    padding: 0.9em 1.8em;
+@media (max-width: 500px) {
+  .header {
+    height: 7.2em;
   }
-  .bonus__list {
-    margin-bottom: 1.7em;
+  .logo {
+    width: 27.7em;
+  }
+  main {
+    padding: 0;
+  }
+  .main-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-screen__text {
+    font-size: 3.6em;
+  }
+  .main-screen__title {
+    max-width: none;
+    font-size: 4.55em;
+    margin-bottom: 0.3em;
+  }
+  .main-screen__subtitle {
+    font-size: 3.6em;
+    margin-bottom: 0.8em;
+  }
+  .button {
+    padding: 0.9em 1.9em;
+    font-size: 4.15em;
+    margin-bottom: 2em;
+  }
+  .main-screen__rights {
+    font-size: 2.95em;
+    max-width: 26.8em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .main-screen__rights:last-child {
+    margin-bottom: 25em;
+  }
+  .animation-wrapper {
+    right: 80.5em;
+    top: 154.7em;
+    transform: rotate(-25deg) scale(1.6);
   }
   .footer {
-    padding-top: 3.5em;
+    padding: 3.5em 0;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 8em;
   }
-  .footer__rights {
-    max-width: 58.1em;
-  }  
-} */
+  .footer__list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .footer__text {
+    max-width: unset;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 900;
+    font-size: 3.9em;
+  }
+  .footer__number {
+    width: 2.9em;
+    height: 2.9em;
+    font-size: 3.6em;
+  }
+  .footer__list-item:not(:last-child) {
+    margin-bottom: 2em;
+    position: relative;
+  }
+  .footer__arrow-1,
+  .footer__arrow-2 {
+    position: absolute;
+    margin: 0;
+    width: 7.1em;
+    transform: scale(-1, 1);
+  }
+  .footer__arrow-1 {
+    top: 10em;
+    right: -3em;
+    animation: arrow1-mob 3.2s ease-in-out alternate infinite;
+  }
+  .footer__arrow-2 {
+    top: 10em;
+    right: -7em;
+    animation: arrow2-mob 3.2s ease-in-out alternate infinite;
+  }
+}
