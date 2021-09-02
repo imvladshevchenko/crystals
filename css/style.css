@@ -127,12 +127,21 @@ section {
     transform: translateY(1em) rotate(10deg) scale(-1, 1);
   }
 }
+@keyframes animation-appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .animation-wrapper {
   position: absolute;
   right: 43.5em;
   top: 49.7em;
   transform: rotate(-25deg);
+  animation: animation-appearance 5s forwards;
 }
 
 .system {
